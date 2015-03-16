@@ -8,6 +8,7 @@
 // GND = GND
 // Trigger = PIN digital 6
 // Echo = PIN digital 7
+//NOTE: Jangan lupa untuk meLEPAS jumper di US-100
 
 const int trigger = 6;
 const int echo = 7;
