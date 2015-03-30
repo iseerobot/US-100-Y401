@@ -1,6 +1,6 @@
 /*
-* Code sudah diuji dan ditest oleh iseerobot.com
-*  - TIM QC iseerobot -
+* This code is tested by iseerobot.com
+* -QC iseerobot -
 */
 
 //Wiring : 
@@ -8,7 +8,7 @@
 // GND = GND
 // Trigger = PIN digital 6
 // Echo = PIN digital 7
-//NOTE: Jangan lupa untuk meLEPAS jumper di US-100
+//NOTE: don't forget to pull jumper on US-100
 
 const int trigger = 6;
 const int echo = 7;
@@ -20,7 +20,6 @@ void setup(){
   pinMode(echo, INPUT);
 }
 void loop(){
-  
   //Trigger US-100
   digitalWrite(trigger, LOW);
   delayMicroseconds(5);
@@ -28,10 +27,11 @@ void loop(){
   delayMicroseconds(10);
   digitalWrite(trigger, LOW);
   
-  //Tangkap sinyal pantulan dan konversi ke dalam cm
+  //Convert echo sound to cm
   distance = pulseIn(echo, HIGH);
   distance = distance*0.0001657;
-  //kirim hasil lewat usart
+  
+  //Send range via USART
   Serial.println(distance);
   delay(50);
 }
