@@ -12,4 +12,5 @@ Example code for US-100 (Y401)
 | ECHO          | Digital 7     |
 
 This code is tested by iseerobot.com
+
 -QC iseerobot -
